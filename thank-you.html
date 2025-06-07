@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - My Portfolio</title>
+    <link rel="stylesheet" href="public/assets/css/styles.css">
+    <link rel="icon" href="public/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .thank-you-container {
+            text-align: center;
+            padding: 100px 20px;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .thank-you-container h1 {
+            margin-bottom: 20px;
+        }
+        .thank-you-container p {
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Your Name</div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="thank-you-container">
+        <h1>Thank You!</h1>
+        <p>Your message has been received. I'll get back to you as soon as possible.</p>
+        <a href="index.html" class="btn primary-btn">Back to Home</a>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Your Name. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://github.com/arigsae" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

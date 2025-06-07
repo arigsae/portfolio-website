@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.header, .footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.hero {
+    background: #f4f4f4;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.about, .projects, .skills, .contact {
+    padding: 40px 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #0056b3;
+}
