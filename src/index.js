@@ -2,82 +2,61 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile navigation menu toggle
     const burger = document.querySelector('.burger');
     const navLinks = document.querySelector('.nav-links');
+    const navLinksArray = document.querySelectorAll('.nav-link');
+    const header = document.querySelector('#header');
     
     burger.addEventListener('click', () => {
         navLinks.classList.toggle('active');
+        
+        // Animación del ícono hamburguesa
         burger.classList.toggle('toggle');
+        
+        // Animación de los enlaces
+        navLinksArray.forEach((link, index) => {
+            if(link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            }
+        });
     });
     
     // Close mobile menu when clicking a nav link
-    document.querySelectorAll('.nav-links li').forEach(link => {
+    navLinksArray.forEach(link => {
         link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            burger.classList.remove('toggle');
-        });
-    });
-    
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
+            if(navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                burger.classList.remove('toggle');
                 
-                // Update active class for navigation
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    link.classList.remove('active');
+                navLinksArray.forEach(link => {
+                    link.style.animation = '';
                 });
-                this.classList.add('active');
             }
         });
     });
     
-    // Handle active navigation links on scroll
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
+    // Cambiar apariencia del header al hacer scroll
     window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (window.pageYOffset >= sectionTop - 100) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
-    
-    // Header scroll effect
-    const header = document.querySelector('header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
-            header.style.padding = '0.5rem 0';
+        if(window.scrollY > 100) {
+            header.classList.add('scrolled');
         } else {
-            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            header.style.padding = '1rem 0';
+            header.classList.remove('scrolled');
         }
     });
     
-    // Update copyright year in footer
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-    
-    // Form submission handling
+    // Validación del formulario de contacto
     const contactForm = document.querySelector('.contact-form');
     const formStatus = document.getElementById('form-status');
     
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
+            // Aquí podríamos añadir validaciones adicionales si fuera necesario
+            // Por ejemplo, validar formato de email, longitud de mensaje, etc.
+            
+            // Simulación de estado del formulario (esto se sobrescribirá con FormSubmit)
+            formStatus.textContent = 'Enviando mensaje...';
+            formStatus.className = 'form-status form-loading';
+            
             // Let FormSubmit handle the submission if you're using that service
             // This is just for visual feedback to the user
             const submitBtn = document.getElementById('submit-btn');
@@ -93,6 +72,69 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 3000);
         });
     }
+    
+    // Animate counters when they become visible
+    function animateCounters() {
+        const counters = document.querySelectorAll('.counter');
+        
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const increment = target / 100;
+            
+            if(count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(animateCounters, 10);
+            } else {
+                counter.innerText = target;
+            }
+        });
+    }
+    
+    // Activate animation on scroll to the section
+    function checkScrollPosition() {
+        const statistics = document.querySelector('.statistics');
+        if(statistics) {
+            const position = statistics.getBoundingClientRect().top;
+            const screenHeight = window.innerHeight;
+            
+            if(position < screenHeight * 0.8) {
+                animateCounters();
+                window.removeEventListener('scroll', checkScrollPosition);
+            }
+        }
+    }
+    
+    window.addEventListener('scroll', checkScrollPosition);
+    
+    // Update copyright year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Smooth Scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if(targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70, // Ajuste para el header fijo
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Animation to show elements on scroll
+    window.addEventListener('load', () => {
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true
+        });
+    });
     
     // Log a message to confirm the script is loaded
     console.log('Portfolio website scripts initialized - Academic style');

@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arigsa - Portfolio</title>
     <link rel="stylesheet" href="public/assets/css/styles.css">
     <link rel="icon" href="public/favicon.svg" type="image/svg+xml">
-    <!-- Font Awesome for icons -->
+    <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navegación -->
     <header id="header">
         <nav class="navbar">
             <div class="container">
@@ -22,11 +24,13 @@
                     <a href="#">Arigsa</a>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#publications" class="nav-link">Publications</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#home" class="nav-link">Inicio</a></li>
+                    <li><a href="#about" class="nav-link">Sobre mí</a></li>
+                    <li><a href="#projects" class="nav-link">Proyectos</a></li>
+                    <li><a href="#publications" class="nav-link">Publicaciones</a></li>
+                    <li><a href="#contact" class="nav-link">Contacto</a></li>
+                    <li><a href="cv.html" class="nav-link">CV</a></li>
+                    <li><a href="about.html" class="nav-link">Sobre mí</a></li>
                 </ul>
                 <div class="burger">
                     <div class="line1"></div>
@@ -37,143 +41,144 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Sección Hero -->
     <section id="home" class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Hi, I'm <span class="highlight">Arigsa</span></h1>
-                <h2 class="subtitle">Researcher & PhD Student</h2>
-                <p class="description">Working on AI and Machine Learning at Universitat Politècnica de València</p>
+            <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+                <h1>Hola, soy <span class="highlight">Arigsa</span></h1>
+                <h2 class="subtitle">Investigador & Doctorando</h2>
+                <p class="description">Trabajando en Inteligencia Artificial e Ingeniería de Producción en la Universitat Politècnica de València</p>
                 <div class="cta-buttons">
-                    <a href="#projects" class="btn primary-btn">View Projects</a>
-                    <a href="#contact" class="btn secondary-btn">Get in Touch</a>
+                    <a href="#projects" class="btn primary-btn">Ver Proyectos</a>
+                    <a href="#contact" class="btn secondary-btn">Contactar</a>
                 </div>
                 <div class="social-links hero-social">
                     <a href="https://github.com/arigsae" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/arigsae" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <a href="https://scholar.google.com/citations?user=yourid" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://orcid.org/your-orcid" target="_blank" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
                 </div>
             </div>
-            <div class="hero-image">
+            <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
                 <img src="public/assets/images/profile.jpg" alt="Arigsa">
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Sección Sobre Mí -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" data-aos="fade-up">Sobre Mí</h2>
             <div class="about-content">
-                <div class="about-image">
-                    <img src="public/assets/images/about.jpg" alt="About Arigsa">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="public/assets/images/about.jpg" alt="Sobre Arigsa">
                 </div>
-                <div class="about-text">
-                    <h3>Researcher & PhD Student</h3>
-                    <p>I am a PhD student at Universitat Politècnica de València, focusing on AI and Machine Learning applications. My research interests include pattern recognition, computer vision, and deep learning.</p>
-                    <p>I'm passionate about developing innovative solutions that can make a positive impact in fields such as healthcare, sustainable development, and education.</p>
+                <div class="about-text" data-aos="fade-left">
+                    <h3>Investigador & Doctorando</h3>
+                    <p>Soy doctorando en la Universitat Politècnica de València, centrado en Ingeniería y Producción Industrial. Mi investigación se enfoca en la aplicación de técnicas de Inteligencia Artificial para optimizar procesos industriales.</p>
+                    <p>Me apasiona desarrollar soluciones innovadoras que puedan tener un impacto positivo en áreas como la industria sostenible, la optimización energética y la mejora de procesos productivos.</p>
                     
                     <div class="about-details">
-                        <div class="about-detail">
-                            <h4>Research Focus</h4>
-                            <p>Machine Learning, Pattern Recognition, Computer Vision</p>
+                        <div class="about-detail" data-aos="zoom-in" data-aos-delay="100">
+                            <h4>Áreas de Investigación</h4>
+                            <p>Inteligencia Artificial, Optimización de Procesos, Industria 4.0</p>
                         </div>
-                        <div class="about-detail">
-                            <h4>Education</h4>
-                            <p>PhD in Artificial Intelligence (ongoing)<br>
-                            MSc in Computer Science, Universitat Politècnica de València<br>
-                            BSc in Computer Engineering, Universitat Politècnica de València</p>
+                        <div class="about-detail" data-aos="zoom-in" data-aos-delay="200">
+                            <h4>Formación Académica</h4>
+                            <p>Doctorando en Ingeniería y Producción Industrial (en curso)<br>
+                            Máster Universitario en Ingeniería Industrial, Universitat Politècnica de València<br>
+                            Grado en Ingeniería en Tecnologías Industriales, Universitat Politècnica de València</p>
                         </div>
                     </div>
                     
-                    <a href="public/assets/docs/CV.pdf" download class="btn primary-btn">Download CV</a>
+                    <a href="public/assets/docs/CV.pdf" download class="btn primary-btn">Descargar CV</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Sección Proyectos -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title" data-aos="fade-up">Proyectos Destacados</h2>
             <div class="project-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
+                <!-- Proyecto 1 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-image">
-                        <img src="public/assets/images/project1.jpg" alt="Machine Learning Project">
+                        <img src="public/assets/images/project1.jpg" alt="Proyecto de IA">
                     </div>
                     <div class="project-info">
-                        <h3>Deep Learning for Medical Image Analysis</h3>
-                        <p>Developed a convolutional neural network model for automated diagnosis of medical conditions from X-ray images, achieving 94% accuracy.</p>
+                        <h3>Optimización de Procesos Industriales mediante IA</h3>
+                        <p>Desarrollo de modelos predictivos para la optimización de procesos de fabricación, reduciendo el consumo energético en un 15%.</p>
                         <div class="project-tags">
                             <span>Python</span>
-                            <span>TensorFlow</span>
-                            <span>Medical AI</span>
+                            <span>Machine Learning</span>
+                            <span>Industria 4.0</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/arigsae/portfolio-website" target="_blank"><i class="fab fa-github"></i> Repository</a>
-                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/arigsae/optimizacion-procesos" target="_blank"><i class="fab fa-github"></i> Repositorio</a>
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Project 2 -->
-                <div class="project-card">
+                <!-- Proyecto 2 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-image">
-                        <img src="public/assets/images/project2.jpg" alt="Data Analysis Project">
+                        <img src="public/assets/images/project2.jpg" alt="Proyecto de Análisis de Datos">
                     </div>
                     <div class="project-info">
-                        <h3>Predictive Analysis of Climate Data</h3>
-                        <p>Built a time-series analysis model to predict environmental changes based on historical climate data, helping identify patterns for sustainable planning.</p>
+                        <h3>Análisis Predictivo de Eficiencia Energética</h3>
+                        <p>Sistema de análisis de series temporales para la predicción del consumo energético en plantas industriales, facilitando la implementación de estrategias de ahorro.</p>
                         <div class="project-tags">
                             <span>R</span>
-                            <span>Time Series</span>
-                            <span>Data Visualization</span>
+                            <span>Series Temporales</span>
+                            <span>Visualización de Datos</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" target="_blank"><i class="fab fa-github"></i> Repository</a>
-                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Report</a>
+                            <a href="#" target="_blank"><i class="fab fa-github"></i> Repositorio</a>
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Informe</a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Project 3 -->
-                <div class="project-card">
+                <!-- Proyecto 3 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-image">
-                        <img src="public/assets/images/project3.jpg" alt="AI Project">
+                        <img src="public/assets/images/project3.jpg" alt="Proyecto de Sostenibilidad">
                     </div>
                     <div class="project-info">
-                        <h3>Natural Language Processing for Text Summarization</h3>
-                        <p>Created an NLP model that automatically generates concise summaries of academic papers while preserving the key information and findings.</p>
+                        <h3>Sistema de Monitorización para Industria Sostenible</h3>
+                        <p>Plataforma IoT para la monitorización en tiempo real de parámetros ambientales y energéticos en entornos industriales.</p>
                         <div class="project-tags">
+                            <span>IoT</span>
                             <span>Python</span>
-                            <span>BERT</span>
-                            <span>NLP</span>
+                            <span>Dashboard</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" target="_blank"><i class="fab fa-github"></i> Repository</a>
-                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Paper</a>
+                            <a href="#" target="_blank"><i class="fab fa-github"></i> Repositorio</a>
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Publicación</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="section-footer">
-                <a href="projects.html" class="btn secondary-btn">View All Projects</a>
+            <div class="section-footer" data-aos="fade-up">
+                <a href="proyectos.html" class="btn secondary-btn">Ver Todos los Proyectos</a>
             </div>
         </div>
     </section>
     
-    <!-- Publications Section -->
+    <!-- Sección Publicaciones -->
     <section id="publications" class="publications">
         <div class="container">
-            <h2 class="section-title">Publications</h2>
+            <h2 class="section-title" data-aos="fade-up">Publicaciones</h2>
             <div class="publications-list">
-                <div class="publication-item">
+                <div class="publication-item" data-aos="fade-up" data-aos-delay="100">
                     <div class="publication-year">2023</div>
                     <div class="publication-content">
-                        <h3>Novel Deep Learning Approach for Medical Image Analysis</h3>
-                        <p class="publication-authors">Arigsa E., Collaborator B., Supervisor C.</p>
-                        <p class="publication-venue">Journal of Medical Artificial Intelligence, 15(3), 245-260</p>
+                        <h3>Enfoque Innovador de IA para la Optimización de Procesos Industriales</h3>
+                        <p class="publication-authors">Arigsa E., Colaborador B., Director C.</p>
+                        <p class="publication-venue">Revista de Inteligencia Artificial Industrial, 15(3), 245-260</p>
                         <div class="publication-links">
                             <a href="#" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
                             <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> DOI</a>
@@ -181,25 +186,25 @@
                     </div>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-aos="fade-up" data-aos-delay="200">
                     <div class="publication-year">2022</div>
                     <div class="publication-content">
-                        <h3>Advances in Time Series Analysis for Climate Data Prediction</h3>
-                        <p class="publication-authors">Collaborator A., Arigsa E., Researcher C.</p>
-                        <p class="publication-venue">Proceedings of the International Conference on Data Science (ICDS 2022)</p>
+                        <h3>Avances en Análisis de Series Temporales para la Predicción de Consumo Energético</h3>
+                        <p class="publication-authors">Colaborador A., Arigsa E., Investigador C.</p>
+                        <p class="publication-venue">Actas del Congreso Internacional de Ciencia de Datos (CICD 2022)</p>
                         <div class="publication-links">
                             <a href="#" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
-                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Conference</a>
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Congreso</a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="publication-item">
+                <div class="publication-item" data-aos="fade-up" data-aos-delay="300">
                     <div class="publication-year">2021</div>
                     <div class="publication-content">
-                        <h3>Efficient Text Summarization Using Transformer-Based Models</h3>
-                        <p class="publication-authors">Arigsa E., Lead Author A.</p>
-                        <p class="publication-venue">IEEE Transactions on Natural Language Processing, 8(2), 112-125</p>
+                        <h3>Sistema de Monitorización Eficiente para Entornos Industriales</h3>
+                        <p class="publication-authors">Arigsa E., Autor Principal A.</p>
+                        <p class="publication-venue">IEEE Transactions on Industrial Informatics, 8(2), 112-125</p>
                         <div class="publication-links">
                             <a href="#" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
                             <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> DOI</a>
@@ -207,20 +212,20 @@
                     </div>
                 </div>
             </div>
-            <div class="section-footer">
-                <a href="publications.html" class="btn secondary-btn">Complete Publications List</a>
+            <div class="section-footer" data-aos="fade-up">
+                <a href="publicaciones.html" class="btn secondary-btn">Lista Completa de Publicaciones</a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Sección Contacto -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
+            <h2 class="section-title" data-aos="fade-up">Contacto</h2>
             <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Let's Connect</h3>
-                    <p>Feel free to reach out for research collaborations, project inquiries, or just to say hello!</p>
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>¡Conectemos!</h3>
+                    <p>No dudes en contactarme para colaboraciones en investigación, consultas sobre proyectos o simplemente para saludar.</p>
                     
                     <div class="contact-details">
                         <div class="contact-item">
@@ -229,11 +234,11 @@
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Universitat Politècnica de València, Valencia, Spain</span>
+                            <span>Universitat Politècnica de València, Valencia, España</span>
                         </div>
                         <div class="contact-item">
                             <i class="fab fa-linkedin"></i>
-                            <a href="https://www.linkedin.com/in/arigsae" target="_blank">LinkedIn Profile</a>
+                            <a href="https://www.linkedin.com/in/arigsae" target="_blank">Perfil de LinkedIn</a>
                         </div>
                     </div>
                     
@@ -245,9 +250,9 @@
                     </div>
                 </div>
                 
-                <form class="contact-form" action="https://formsubmit.co/arigsae@etsii.upv.es" method="POST">
+                <form class="contact-form" action="https://formsubmit.co/arigsae@etsii.upv.es" method="POST" data-aos="fade-left">
                     <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name">Nombre</label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
@@ -255,25 +260,25 @@
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="subject">Subject</label>
+                        <label for="subject">Asunto</label>
                         <input type="text" id="subject" name="subject" required>
                     </div>
                     <div class="form-group">
-                        <label for="message">Message</label>
+                        <label for="message">Mensaje</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn primary-btn" id="submit-btn">Send Message</button>
+                    <button type="submit" class="btn primary-btn" id="submit-btn">Enviar Mensaje</button>
                     <div id="form-status" class="form-status"></div>
-                    <!-- Hidden inputs for FormSubmit configuration -->
-                    <input type="hidden" name="_subject" value="Portfolio Contact: New Message">
+                    <!-- Inputs ocultos para la configuración de FormSubmit -->
+                    <input type="hidden" name="_subject" value="Portfolio Contacto: Nuevo Mensaje">
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://arigsae.github.io/portfolio-website/thank-you.html">
+                    <input type="hidden" name="_next" value="https://arigsae.github.io/portfolio-website/gracias.html">
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Pie de página -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -281,11 +286,11 @@
                     <a href="#">Arigsa</a>
                 </div>
                 <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#publications">Publications</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#home">Inicio</a>
+                    <a href="#about">Sobre Mí</a>
+                    <a href="#projects">Proyectos</a>
+                    <a href="#publications">Publicaciones</a>
+                    <a href="#contact">Contacto</a>
                 </div>
                 <div class="social-links footer-social">
                     <a href="https://github.com/arigsae" target="_blank"><i class="fab fa-github"></i></a>
@@ -294,11 +299,17 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> Arigsa. All rights reserved.</p>
+                <p>&copy; <span id="current-year"></span> Arigsa. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="src/index.js"></script>
+    <script>
+        AOS.init();
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
