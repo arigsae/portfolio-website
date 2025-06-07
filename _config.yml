@@ -1,0 +1,18 @@
+title: Arigsa - Portfolio
+description: Portfolio personal de Arigsa, investigador y doctorando en Ingeniería y Producción Industrial.
+baseurl: "/portfolio-website"
+url: "https://arigsae.github.io"
+
+# Especificar que estamos usando la raíz del repositorio
+source: .
+destination: ./_site
+
+# Configuración SASS (si usas SCSS)
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Incluir archivos y carpetas específicas
+include:
+  - public
+  - public/assets/css/styles.css
