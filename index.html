@@ -15,14 +15,14 @@
     
     <style>
         :root {
-            --primary-color: #5fb0ff; /* Color azul más claro */
+            --primary-color: #74c0ff; /* Color azul mucho más claro */
             --secondary-color: #2c3e50;
             --accent-color: #e74c3c;
             --background-light: #f5f7fa;
             --background-dark: #1a1e23;
             --text-light: #f5f7fa;
             --text-dark: #2c3e50;
-            --card-background: rgba(95, 176, 255, 0.1); /* Ajustado a más claro */
+            --card-background: rgba(116, 192, 255, 0.1); /* Ajustado a más claro */
         }
 
         .reveal {
@@ -37,26 +37,26 @@
         }
 
         .gradient-text {
-            background: linear-gradient(45deg, #5fb0ff, #2c3e50);
+            background: linear-gradient(45deg, #74c0ff, #2c3e50);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: 0 0 30px rgba(95, 176, 255, 0.3);
+            text-shadow: 0 0 30px rgba(116, 192, 255, 0.5);
         }
 
         .glow-link {
             position: relative;
             color: white;
-            text-shadow: 0 0 10px rgba(95, 176, 255, 0.5),
-                        0 0 20px rgba(95, 176, 255, 0.4),
-                        0 0 30px rgba(95, 176, 255, 0.3);
+            text-shadow: 0 0 10px rgba(116, 192, 255, 0.5),
+                        0 0 20px rgba(116, 192, 255, 0.4),
+                        0 0 30px rgba(116, 192, 255, 0.3);
             transition: text-shadow 0.3s ease-in-out;
         }
 
         .glow-link:hover {
-            text-shadow: 0 0 20px rgba(95, 176, 255, 0.7),
-                        0 0 30px rgba(95, 176, 255, 0.6),
-                        0 0 40px rgba(95, 176, 255, 0.5);
+            text-shadow: 0 0 20px rgba(116, 192, 255, 0.7),
+                        0 0 30px rgba(116, 192, 255, 0.6),
+                        0 0 40px rgba(116, 192, 255, 0.5);
         }
         
         .card {
@@ -136,7 +136,7 @@
         }
 
         .primary-btn {
-            background: linear-gradient(45deg, #5fb0ff, #2c3e50);
+            background: linear-gradient(45deg, #74c0ff, #2c3e50);
             color: white;
         }
 
@@ -146,17 +146,17 @@
         }
 
         .secondary-btn {
-            border: 2px solid #5fb0ff;
-            color: #5fb0ff;
+            border: 2px solid #74c0ff;
+            color: #74c0ff;
         }
 
         .secondary-btn:hover {
-            background: #5fb0ff;
+            background: #74c0ff;
             color: white;
         }
 
         .project-image {
-            background: linear-gradient(45deg, #5fb0ff, #2c3e50);
+            background: linear-gradient(45deg, #74c0ff, #2c3e50);
             width: 100%;
             height: 12rem;
             display: flex;
@@ -175,7 +175,7 @@
         <nav class="fixed w-full z-50 bg-gray-900 bg-opacity-90 backdrop-filter backdrop-blur-lg">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="flex justify-between items-center py-4">
-                    <a href="#" class="gradient-text text-xl font-bold">Arnau Igualde Sáez</a>
+                    <a href="index.html" class="gradient-text text-xl font-bold">Arnau Igualde Sáez</a>
                     <div class="flex space-x-8">
                         <a href="#projects" class="hover:text-blue-400 transition-colors">Proyectos</a>
                         <a href="#publications" class="hover:text-blue-400 transition-colors">Publicaciones</a>
@@ -207,8 +207,8 @@
                         
                         <h1 class="text-6xl font-bold mb-4 gradient-text">¡Bienvenido!</h1>
                         <p class="text-xl text-gray-300 mb-8 max-w-2xl">
-                            Soy Arnau Igualde Sáez, investigador y doctorando en Ingeniería y Producción Industrial en la UPV.
-                            Mi trabajo se centra en la aplicación de técnicas de investigación operativa para modelar la planificación de recursos en la UPV.
+                            Soy Arnau Igualde Sáez, Técnico Superior de Investigación y Doctorando en Ingeniería y Producción Industrial en la UPV.
+                            Mi trabajo se centra en la aplicación de técnicas de Investigación Operativa para modelar la planificación de recursos en la UPV.
                         </p>
                         <div class="flex justify-center gap-4">
                             <a href="#projects" class="btn primary-btn">Ver Proyectos</a>
@@ -226,12 +226,16 @@
                         <!-- Proyecto 1 - Basado en la publicación -->
                         <div class="card rounded-xl overflow-hidden reveal">
                             <div class="relative">
-                                <img src="public/assets/images/project1.jpg" alt="Educational Data Mining" class="w-full h-48 object-cover"/>
+                                <img src="public/assets/images/project1.png" 
+                                     alt="Educational Data Mining" 
+                                     class="w-full h-48 object-cover"
+                                     onerror="this.src='public/assets/images/default-project.png'; this.onerror=null;"
+                                />
                                 <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
                             </div>
                             <div class="p-6">
                                 <h3 class="text-xl font-semibold mb-2">Educational data mining para la predicción del abandono universitario en ingeniería</h3>
-                                <p class="text-gray-400 mb-4">Proyecto de investigación enfocado en la aplicación de técnicas de Educational Data Mining (EDM) para predecir y reducir el abandono universitario en carreras de ingeniería.</p>
+                                <p class="text-gray-400 mb-4"></p>
                                 <div class="flex flex-wrap gap-2">
                                     <span class="bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full text-sm">EDM</span>
                                     <span class="bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full text-sm">Machine Learning</span>
@@ -259,8 +263,8 @@
                                     2025
                                 </div>
                                 <div class="flex-1">
-                                    <h3 class="text-xl font-semibold mb-2">Educational data mining para la predicción del abandono universitario en ingeniería</h3>
-                                    <p class="text-gray-400 mb-1">Igualde Sáez A., Alcover Arandiga R., Vallada Regalado E., Hernández P.</p>
+                                    <h3 class="text-xl font-semibold mb-2">LLM performance on mathematical reasoning in Catalan language</h3>
+                                    <p class="text-gray-400 mb-1">L. Rhomrasi, Y. Ahsini, A Igualde-Sáez, R Vinuesa, S Hoyas, Jose P. García-Sabater, M. J. Fullana-i-Alfonso, J. A.  Conejero </p>
                                     <p class="text-gray-500 italic mb-4">Results in Engineering, Volume 22, 2025, 102288</p>
                                     <div class="flex gap-4">
                                         <a href="https://www.sciencedirect.com/science/article/pii/S2590123025004475" target="_blank" class="text-blue-400">
@@ -277,9 +281,9 @@
                                     2023
                                 </div>
                                 <div class="flex-1">
-                                    <h3 class="text-xl font-semibold mb-2">On the Mathematics Assessment Methods at a Spanish University</h3>
-                                    <p class="text-gray-400 mb-1">Alcover Arandiga R., Merelo Guervós J.J., Aleixos Borrás M.N., Igualde Sáez A.</p>
-                                    <p class="text-gray-500 italic mb-4">Mathematics Education Research. CSEDU 2023. Communications in Computer and Information Science, vol 1908</p>
+                                    <h3 class="text-xl font-semibold mb-2">Guidelines for Designing an LLM Chatbot to Support First-Year Bachelor’s Degree Students at UPV with Specific and General Inquiries to Reduce Dropout Rates</h3>
+                                    <p class="text-gray-400 mb-1">Igualde-Sáez, A. , Garcia-Sabater, J.P. , Maheut, J  </p>
+                                    <p class="text-gray-500 italic mb-4">Lecture Notes on Data Engineering and Communications Technologies, vol 239. Springer, Cham. </p>
                                     <div class="flex gap-4">
                                         <a href="https://link.springer.com/chapter/10.1007/978-3-031-82334-3_116" target="_blank" class="text-blue-400">
                                             <i class="fas fa-external-link-alt"></i> DOI
@@ -299,7 +303,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                     <div>
                         <h3 class="text-xl font-bold mb-4 gradient-text">Arnau Igualde Sáez</h3>
-                        <p class="text-gray-400">Investigador y doctorando especializado en EDM aplicada a la educación universitaria.</p>
+                        <p class="text-gray-400">Investigador y doctorando especializado en la planificación de recursos en Educación Superior.</p>
                     </div>
                     <div>
                         <h3 class="text-lg font-semibold mb-4">Enlaces rápidos</h3>
@@ -316,8 +320,11 @@
                             <a href="https://github.com/arigsae" target="_blank" class="text-gray-400 hover:text-white">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="https://www.linkedin.com/in/arigsae" target="_blank" class="text-gray-400 hover:text-white">
+                            <a href="https://www.linkedin.com/in/arnauigualde" target="_blank" class="text-gray-400 hover:text-white">
                                 <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://orcid.org/0009-0009-0824-6957" target="_blank" class="text-gray-400 hover:text-white">
+                                <i class="fab fa-orcid"></i>
                             </a>
                             <a href="https://scholar.google.com/citations?user=yourid" target="_blank" class="text-gray-400 hover:text-white">
                                 <i class="fas fa-graduation-cap"></i>
@@ -336,7 +343,7 @@
         // Define the year in footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // Background Animation - Neural Network Visualization
+        // Background Animation - TSP Visualization
         function initBackground() {
             const scene = new THREE.Scene();
             const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -347,217 +354,227 @@
             
             renderer.setSize(window.innerWidth, window.innerHeight);
 
-            // Create neural network
-            const neurons = [];
-            const connections = [];
-            const layers = [10, 14, 14, 10]; // Number of neurons per layer
-            const layerDistance = 150;
-            const neuronSpacing = 40;
+            // Create cities (nodes)
+            const cities = [];
+            const cityCount = 15;  // Reducido el número de puntos
+            const mapRadius = 400;
             
-            // Create neurons for each layer
-            let neuronIndex = 0;
-            for (let layer = 0; layer < layers.length; layer++) {
-                for (let i = 0; i < layers[layer]; i++) {
-                    const neuronGeometry = new THREE.SphereGeometry(3, 16, 16);
-                    const neuronMaterial = new THREE.MeshBasicMaterial({
-                        color: 0x3498db,
-                        transparent: true,
-                        opacity: 0.7
-                    });
-                    
-                    const neuron = new THREE.Mesh(neuronGeometry, neuronMaterial);
-                    
-                    // Position in layer
-                    const offsetY = (layers[layer] * neuronSpacing) / 2;
-                    neuron.position.x = layer * layerDistance - (layerDistance * (layers.length - 1)) / 2;
-                    neuron.position.y = i * neuronSpacing - offsetY;
-                    neuron.position.z = 0;
-                    
-                    // Add metadata
-                    neuron.userData = {
-                        id: neuronIndex++,
-                        layer: layer,
-                        pulseFrequency: 0.5 + Math.random() * 1.5,
-                        pulsePhase: Math.random() * Math.PI * 2
-                    };
-                    
-                    neurons.push(neuron);
-                    scene.add(neuron);
-                }
-            }
-            
-            // Create connections between neurons of adjacent layers
-            for (let layer = 0; layer < layers.length - 1; layer++) {
-                const currentLayerNeurons = neurons.filter(n => n.userData.layer === layer);
-                const nextLayerNeurons = neurons.filter(n => n.userData.layer === layer + 1);
+            for (let i = 0; i < cityCount; i++) {
+                const angle = (i / cityCount) * Math.PI * 2;
+                const radius = mapRadius * (0.6 + Math.random() * 0.4);
                 
-                for (const sourceNeuron of currentLayerNeurons) {
-                    for (const targetNeuron of nextLayerNeurons) {
-                        // Only connect some neurons (random)
-                        if (Math.random() > 0.7) continue;
-                        
-                        const lineGeometry = new THREE.BufferGeometry().setFromPoints([
-                            sourceNeuron.position,
-                            targetNeuron.position
-                        ]);
-                        
-                        const lineMaterial = new THREE.LineBasicMaterial({
-                            color: 0x3498db,
-                            transparent: true,
-                            opacity: 0.2
-                        });
-                        
-                        const connection = new THREE.Line(lineGeometry, lineMaterial);
-                        connection.userData = {
-                            source: sourceNeuron.userData.id,
-                            target: targetNeuron.userData.id,
-                            pulseFrequency: 0.5 + Math.random() * 1.5,
-                            pulsePhase: Math.random() * Math.PI * 2,
-                            strength: 0.2 + Math.random() * 0.3
-                        };
-                        
-                        connections.push(connection);
-                        scene.add(connection);
-                    }
-                }
-            }
-            
-            // Create activation pulses
-            const pulses = [];
-            const maxPulses = 5;
-            
-            function createPulse() {
-                if (pulses.length >= maxPulses) return;
-                
-                // Pick random neurons from first layer
-                const sourceLayer = neurons.filter(n => n.userData.layer === 0);
-                const startNeuron = sourceLayer[Math.floor(Math.random() * sourceLayer.length)];
-                
-                const pulseGeometry = new THREE.SphereGeometry(4, 16, 16);
-                const pulseMaterial = new THREE.MeshBasicMaterial({
-                    color: 0x3498db,
+                const cityGeometry = new THREE.SphereGeometry(5, 16, 16);
+                const cityMaterial = new THREE.MeshBasicMaterial({
+                    color: new THREE.Color().setHSL(0.6, 0.8, 0.7),
                     transparent: true,
-                    opacity: 0.8
+                    opacity: 0.7
                 });
                 
-                const pulse = new THREE.Mesh(pulseGeometry, pulseMaterial);
-                pulse.position.copy(startNeuron.position);
-                pulse.userData = {
-                    neuronId: startNeuron.userData.id,
-                    progress: 0,
-                    path: [startNeuron.userData.id],
-                    currentConnection: null,
-                    speed: 0.01 + Math.random() * 0.02
+                const city = new THREE.Mesh(cityGeometry, cityMaterial);
+                city.position.set(
+                    Math.cos(angle) * radius + (Math.random() - 0.5) * 100,
+                    (Math.random() - 0.5) * 200,
+                    Math.sin(angle) * radius + (Math.random() - 0.5) * 100
+                );
+                
+                // City label
+                const labelGeometry = new THREE.RingGeometry(8, 10, 8);
+                const labelMaterial = new THREE.MeshBasicMaterial({
+                    color: 0x74c0ff,
+                    transparent: true,
+                    opacity: 0.5
+                });
+                const label = new THREE.Mesh(labelGeometry, labelMaterial);
+                label.position.copy(city.position);
+                label.lookAt(camera.position);
+                
+                city.userData = {
+                    id: i,
+                    originalColor: cityMaterial.color.clone(),
+                    pulseSpeed: Math.random() * 0.02 + 0.01,
+                    pulsePhase: Math.random() * Math.PI * 2,
+                    label: label
                 };
                 
-                pulses.push(pulse);
-                scene.add(pulse);
+                cities.push(city);
+                scene.add(city);
+                scene.add(label);
             }
             
-            function updatePulses(time) {
-                // Occasionally create new pulses
-                if (Math.random() > 0.98) {
-                    createPulse();
+            // TSP solution paths
+            let currentPath = [];
+            let bestPath = [];
+            let pathLines = [];
+            let traveler = null;
+            
+            // Create traveler
+            const travelerGeometry = new THREE.SphereGeometry(4, 16, 16);
+            const travelerMaterial = new THREE.MeshBasicMaterial({
+                color: 0x74c0ff,
+                emissive: 0x74c0ff,
+                emissiveIntensity: 0.3
+            });
+            traveler = new THREE.Mesh(travelerGeometry, travelerMaterial);
+            scene.add(traveler);
+            
+            // Generate random TSP solution
+            function generateRandomPath() {
+                const path = [...Array(cityCount).keys()];
+                for (let i = path.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [path[i], path[j]] = [path[j], path[i]];
                 }
+                return path;
+            }
+            
+            // Calculate path distance
+            function calculateDistance(path) {
+                let distance = 0;
+                for (let i = 0; i < path.length; i++) {
+                    const current = cities[path[i]].position;
+                    const next = cities[path[(i + 1) % path.length]].position;
+                    distance += current.distanceTo(next);
+                }
+                return distance;
+            }
+            
+            // Draw path
+            function drawPath(path, color = 0x74c0ff, opacity = 0.3) {
+                // Clear existing path lines
+                pathLines.forEach(line => scene.remove(line));
+                pathLines = [];
                 
-                for (let i = pulses.length - 1; i >= 0; i--) {
-                    const pulse = pulses[i];
-                    const currentNeuron = neurons.find(n => n.userData.id === pulse.userData.neuronId);
+                for (let i = 0; i < path.length; i++) {
+                    const currentCity = cities[path[i]];
+                    const nextCity = cities[path[(i + 1) % path.length]];
                     
-                    // If no current connection, find next one
-                    if (!pulse.userData.currentConnection) {
-                        const possibleConnections = connections.filter(c => 
-                            c.userData.source === pulse.userData.neuronId && 
-                            !pulse.userData.path.includes(c.userData.target)
-                        );
-                        
-                        // If no more connections, remove pulse
-                        if (possibleConnections.length === 0) {
-                            scene.remove(pulse);
-                            pulses.splice(i, 1);
-                            continue;
-                        }
-                        
-                        // Pick random connection to follow
-                        pulse.userData.currentConnection = possibleConnections[
-                            Math.floor(Math.random() * possibleConnections.length)
-                        ];
-                        pulse.userData.progress = 0;
-                    }
+                    const lineGeometry = new THREE.BufferGeometry().setFromPoints([
+                        currentCity.position.clone(),
+                        nextCity.position.clone()
+                    ]);
                     
-                    // Move along current connection
-                    const connection = pulse.userData.currentConnection;
-                    const sourceNeuron = neurons.find(n => n.userData.id === connection.userData.source);
-                    const targetNeuron = neurons.find(n => n.userData.id === connection.userData.target);
+                    const lineMaterial = new THREE.LineBasicMaterial({
+                        color: color,
+                        transparent: true,
+                        opacity: opacity,
+                        linewidth: 2
+                    });
                     
-                    // Update progress
-                    pulse.userData.progress += pulse.userData.speed;
-                    
-                    // Interpolate position
-                    pulse.position.lerpVectors(sourceNeuron.position, targetNeuron.position, pulse.userData.progress);
-                    
-                    // Highlight connection
-                    connection.material.opacity = 0.5 + Math.sin(time * 10) * 0.3;
-                    connection.material.color.setHSL(0.6, 1, 0.5 + Math.sin(time * 10) * 0.3);
-                    
-                    // If reached target neuron
-                    if (pulse.userData.progress >= 1) {
-                        // Activate target neuron
-                        targetNeuron.material.opacity = 1;
-                        targetNeuron.scale.set(1.5, 1.5, 1.5);
-                        
-                        // Update pulse state
-                        pulse.userData.neuronId = connection.userData.target;
-                        pulse.userData.path.push(connection.userData.target);
-                        pulse.userData.currentConnection = null;
-                        
-                        // If reached output layer, remove pulse
-                        if (targetNeuron.userData.layer === layers.length - 1) {
-                            setTimeout(() => {
-                                scene.remove(pulse);
-                                pulses.splice(pulses.indexOf(pulse), 1);
-                            }, 500);
-                        }
-                    }
+                    const line = new THREE.Line(lineGeometry, lineMaterial);
+                    pathLines.push(line);
+                    scene.add(line);
                 }
             }
             
-            camera.position.z = 400;
-            let time = 0;
+            // Simulated annealing for TSP
+            let temperature = 1000;
+            let coolingRate = 0.995;
+            let iterations = 0;
             
+            currentPath = generateRandomPath();
+            bestPath = [...currentPath];
+            let bestDistance = calculateDistance(bestPath);
+            
+            // Traveler animation
+            let travelerProgress = 0;
+            let currentSegment = 0;
+            
+            camera.position.set(0, 200, 600);
+            camera.lookAt(0, 0, 0);
+            
+            let time = 0;
+
             function animate() {
                 requestAnimationFrame(animate);
                 time += 0.01;
+                iterations++;
                 
-                // Rotate entire network slightly
-                scene.rotation.y = Math.sin(time * 0.1) * 0.1;
-                scene.rotation.x = Math.sin(time * 0.15) * 0.05;
-                
-                // Update neurons (pulsing effect)
-                neurons.forEach(neuron => {
-                    const pulse = 0.8 + Math.sin(time * neuron.userData.pulseFrequency + neuron.userData.pulsePhase) * 0.2;
-                    neuron.scale.set(pulse, pulse, pulse);
+                // TSP optimization every few frames
+                if (iterations % 5 === 0 && temperature > 1) {
+                    // Create neighbor solution by swapping two cities
+                    const newPath = [...currentPath];
+                    const i = Math.floor(Math.random() * newPath.length);
+                    const j = Math.floor(Math.random() * newPath.length);
+                    [newPath[i], newPath[j]] = [newPath[j], newPath[i]];
                     
-                    // Reset opacity (it may have been changed by pulses)
-                    neuron.material.opacity = 0.5 + Math.sin(time + neuron.userData.id * 0.1) * 0.2;
+                    const currentDistance = calculateDistance(currentPath);
+                    const newDistance = calculateDistance(newPath);
+                    
+                    // Accept or reject the new solution
+                    if (newDistance < currentDistance || Math.random() < Math.exp((currentDistance - newDistance) / temperature)) {
+                        currentPath = newPath;
+                        
+                        if (newDistance < bestDistance) {
+                            bestPath = [...newPath];
+                            bestDistance = newDistance;
+                            drawPath(bestPath, 0x2ecc71, 0.6); // Green for best path
+                        } else {
+                            drawPath(currentPath, 0x74c0ff, 0.4); // Blue for current path
+                        }
+                    }
+                    
+                    temperature *= coolingRate;
+                    
+                    // Reset when temperature gets too low
+                    if (temperature < 1) {
+                        temperature = 500;
+                        currentPath = generateRandomPath();
+                    }
+                }
+                
+                // Animate cities
+                cities.forEach((city, index) => {
+                    // Pulsing effect
+                    const pulse = 1 + Math.sin(time * city.userData.pulseSpeed + index) * 0.2;
+                    city.scale.setScalar(pulse);
+                    
+                    // Update label orientation
+                    city.userData.label.lookAt(camera.position);
+                    city.userData.label.rotateZ(time * 0.5);
+                    
+                    // Highlight cities in best path
+                    const isInBestPath = bestPath.includes(index);
+                    city.material.color.setHSL(
+                        isInBestPath ? 0.33 : 0.6, // Green if in best path, blue otherwise
+                        0.8,
+                        0.7 + Math.sin(time + index) * 0.1
+                    );
                 });
                 
-                // Update connections
-                connections.forEach(connection => {
-                    connection.material.opacity = 0.1 + Math.sin(time * connection.userData.pulseFrequency + connection.userData.pulsePhase) * 0.1;
-                });
+                // Animate traveler along best path
+                if (bestPath.length > 0) {
+                    travelerProgress += 0.02;
+                    
+                    if (travelerProgress >= 1) {
+                        travelerProgress = 0;
+                        currentSegment = (currentSegment + 1) % bestPath.length;
+                    }
+                    
+                    const currentCityIndex = bestPath[currentSegment];
+                    const nextCityIndex = bestPath[(currentSegment + 1) % bestPath.length];
+                    
+                    const currentPos = cities[currentCityIndex].position;
+                    const nextPos = cities[nextCityIndex].position;
+                    
+                    // Interpolate position
+                    traveler.position.lerpVectors(currentPos, nextPos, travelerProgress);
+                    traveler.position.y += 10; // Hover above cities
+                }
                 
-                // Update pulses
-                updatePulses(time);
+                // Camera rotation
+                camera.position.x = Math.cos(time * 0.1) * 600;
+                camera.position.z = Math.sin(time * 0.1) * 600;
+                camera.lookAt(0, 0, 0);
                 
                 renderer.render(scene, camera);
             }
             
-            // Start animation
+            // Initialize with a path
+            drawPath(currentPath);
             animate();
         }
 
-        // Neural Network Animation for Hero
+        // Neural Network Animation for Hero - Reducido a la mitad de puntos
         function createNeuralNetwork() {
             const scene = new THREE.Scene();
             const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -579,7 +596,7 @@
             const networkGroup = new THREE.Group();
             scene.add(networkGroup);
             
-            const layers = [8, 12, 12, 8]; // Neurons per layer
+            const layers = [4, 6, 6, 4]; // Reducido a la mitad (antes era [8, 12, 12, 8])
             const layerDistance = 50;
             const neuronPositions = [];
             const neurons = [];
@@ -601,8 +618,8 @@
                     
                     const neuronGeometry = new THREE.SphereGeometry(2.5, 16, 16);
                     const neuronMaterial = new THREE.MeshPhongMaterial({
-                        color: 0x3498db,
-                        emissive: 0x3498db,
+                        color: 0x74c0ff, // Azul más claro
+                        emissive: 0x74c0ff, // Azul más claro
                         emissiveIntensity: 0.3,
                         specular: 0xffffff,
                         shininess: 100
@@ -649,7 +666,7 @@
                         const points = curve.getPoints(20);
                         const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
                         const lineMaterial = new THREE.LineBasicMaterial({
-                            color: 0x3498db,
+                            color: 0x74c0ff, // Azul más claro
                             transparent: true,
                             opacity: 0.2
                         });
@@ -669,7 +686,7 @@
             
             // Add pulses (data flowing through network)
             const pulses = [];
-            const maxPulses = 8;
+            const maxPulses = 4; // Reducido a la mitad (antes era 8)
             
             function createPulse() {
                 if (pulses.length >= maxPulses) return;
@@ -688,8 +705,8 @@
                 // Create pulse
                 const pulseGeometry = new THREE.SphereGeometry(1.5, 12, 12);
                 const pulseMaterial = new THREE.MeshPhongMaterial({
-                    color: 0x3498db,
-                    emissive: 0x3498db,
+                    color: 0x74c0ff, // Azul más claro
+                    emissive: 0x74c0ff, // Azul más claro
                     emissiveIntensity: 0.8,
                     transparent: true,
                     opacity: 0.8
@@ -716,7 +733,7 @@
             const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
             scene.add(ambientLight);
             
-            const blueLight = new THREE.PointLight(0x3498db, 1, 200);
+            const blueLight = new THREE.PointLight(0x74c0ff, 1, 200); // Azul más claro
             blueLight.position.set(-50, 0, 50);
             scene.add(blueLight);
             
