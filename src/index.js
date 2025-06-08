@@ -139,3 +139,190 @@ document.addEventListener('DOMContentLoaded', () => {
     // Log a message to confirm the script is loaded
     console.log('Portfolio website scripts initialized - Academic style');
 });
+
+// Background Animation
+function initBackground() {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ 
+        canvas: document.getElementById('background-animation'), 
+        alpha: true 
+    });
+    
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    const material = new THREE.PointsMaterial({ color: 0x3498db, size: 2 });
+    const geometry = new THREE.Group();
+
+    for (let i = 0; i < 2000; i++) {
+        const x = Math.random() * 2000 - 1000;
+        const y = Math.random() * 2000 - 1000;
+        const z = Math.random() * 2000 - 1000;
+        
+        const shapeType = Math.floor(Math.random() * 3);
+        let shape;
+
+        if (shapeType === 0) {
+            shape = new THREE.PlaneGeometry(2, 2);
+        } else if (shapeType === 1) {
+            shape = new THREE.CircleGeometry(2, 32);
+        } else {
+            shape = new THREE.BufferGeometry();
+            const vertices = new Float32Array([
+                0, 2, 0,
+                -2, -2, 0,
+                2, -2, 0
+            ]);
+            shape.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+        }
+
+        const mesh = new THREE.Mesh(shape, material);
+        mesh.position.set(x, y, z);
+        geometry.add(mesh);
+    }
+
+    scene.add(geometry);
+    camera.position.z = 1000;
+
+    function animate() {
+        requestAnimationFrame(animate);
+        geometry.rotation.x += 0.0002;
+        geometry.rotation.y += 0.0002;
+        renderer.render(scene, camera);
+    }
+    animate();
+}
+
+// DNA Animation
+function createDNA() {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ 
+        alpha: true, 
+        canvas: document.getElementById('hero-canvas'),
+        antialias: true
+    });
+    
+    function updateSize() {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+    }
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    
+    const group = new THREE.Group();
+    scene.add(group);
+    
+    const numPoints = 40;
+    const amplitude = 40;
+    const spacing = 6;
+    
+    const material = new THREE.MeshPhysicalMaterial({ 
+        emissive: 0x3498db,
+        emissiveIntensity: 0.8,
+        metalness: 0.9,
+        roughness: 0.1,
+        clearcoat: 1.0,
+        clearcoatRoughness: 0.1
+    });
+    
+    const lineMaterial = new THREE.LineBasicMaterial({ 
+        color: 0x3498db,
+        opacity: 0.4,
+        transparent: true
+    });
+    
+    for (let i = 0; i < numPoints; i++) {
+        const angle = i * (Math.PI / 8);
+        
+        const x1 = Math.sin(angle) * amplitude;
+        const x2 = -Math.sin(angle) * amplitude;
+        const y = i * spacing - (numPoints * spacing) / 2;
+        const z = Math.cos(angle) * amplitude;
+        
+        const sphereGeometry = new THREE.SphereGeometry(1.2 + Math.random() * 0.8, 32, 32);
+        const sphere1 = new THREE.Mesh(sphereGeometry, material);
+        const sphere2 = new THREE.Mesh(sphereGeometry, material);
+        
+        sphere1.position.set(x1, y, z);
+        sphere2.position.set(x2, y, -z);
+        
+        group.add(sphere1);
+        group.add(sphere2);
+        
+        if (i < numPoints - 1) {
+            const nextAngle = (i + 1) * (Math.PI / 8);
+            const nextX1 = Math.sin(nextAngle) * amplitude;
+            const nextY = (i + 1) * spacing - (numPoints * spacing) / 2;
+            const nextZ = Math.cos(nextAngle) * amplitude;
+            
+            const lineGeometry = new THREE.BufferGeometry().setFromPoints([
+                new THREE.Vector3(x1, y, z),
+                new THREE.Vector3(nextX1, nextY, nextZ)
+            ]);
+            const line = new THREE.Line(lineGeometry, lineMaterial);
+            group.add(line);
+        }
+    }
+    
+    const mainLight = new THREE.PointLight(0xffffff, 2, 300);
+    mainLight.position.set(0, 10, -20);
+    scene.add(mainLight);
+    
+    const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+    scene.add(ambientLight);
+    
+    const bloomLight = new THREE.PointLight(0x3498db, 0.5, 200);
+    bloomLight.position.set(-50, 0, 50);
+    scene.add(bloomLight);
+    
+    camera.position.x = 200;
+    camera.position.y = 0;
+    camera.position.z = 0;
+    camera.lookAt(0, 0, 0);
+    
+    group.rotation.x = Math.PI / 2;
+    
+    function animate() {
+        requestAnimationFrame(animate);
+        group.rotation.y += 0.003;
+        
+        group.position.y = Math.sin(Date.now() * 0.001) * 5;
+        
+        renderer.render(scene, camera);
+    }
+    
+    animate();
+}
+
+// Scroll reveal
+function reveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add('active');
+        }
+    });
+}
+
+// Handle window resize
+function handleResize() {
+    const canvas = document.getElementById('background-animation');
+    if (canvas) {
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+}
+
+// Initialize everything
+window.addEventListener('load', () => {
+    initBackground();
+    createDNA();
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('resize', handleResize);
+    reveal();
+});
