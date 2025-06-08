@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arigsa - CV</title>
+    <title>Arnau Igualde Sáez - CV</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <link rel="icon" href="public/favicon.svg" type="image/svg+xml">
 
     <style>
+        :root {
+            --primary-color: #5fb0ff; /* Color azul más claro */
+        }
+        
         #background-animation {
             position: fixed;
             top: 0;
@@ -32,26 +36,26 @@
         }
 
         .gradient-text {
-            background: linear-gradient(45deg, #3498db, #2c3e50);
+            background: linear-gradient(45deg, #5fb0ff, #2c3e50);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: 0 0 30px rgba(52, 152, 219, 0.3);
+            text-shadow: 0 0 30px rgba(95, 176, 255, 0.3);
         }
         
         .glow-link {
             position: relative;
             color: white; /* Default color */
-            text-shadow: 0 0 10px rgba(52, 152, 219, 0.5),
-                        0 0 20px rgba(52, 152, 219, 0.4),
-                        0 0 30px rgba(52, 152, 219, 0.3);
+            text-shadow: 0 0 10px rgba(95, 176, 255, 0.5),
+                        0 0 20px rgba(95, 176, 255, 0.4),
+                        0 0 30px rgba(95, 176, 255, 0.3);
             transition: text-shadow 0.3s ease-in-out;
         }
 
         .glow-link:hover {
-            text-shadow: 0 0 20px rgba(52, 152, 219, 0.7),
-                        0 0 30px rgba(52, 152, 219, 0.6),
-                        0 0 40px rgba(52, 152, 219, 0.5);
+            text-shadow: 0 0 20px rgba(95, 176, 255, 0.7),
+                        0 0 30px rgba(95, 176, 255, 0.6),
+                        0 0 40px rgba(95, 176, 255, 0.5);
         }
 
         @keyframes gradient {
@@ -80,11 +84,11 @@
     <nav class="fixed w-full z-50 bg-gray-900 bg-opacity-90 backdrop-filter backdrop-blur-lg">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center py-4">
-                <a href="index.html" class="gradient-text text-xl font-bold">Arigsa</a>
+                <a href="index.html" class="gradient-text text-xl font-bold">Arnau Igualde Sáez</a>
                 <div class="flex space-x-8">
                     <a href="index.html#projects" class="hover:text-blue-400 transition-colors">Proyectos</a>
+                    <a href="index.html#publications" class="hover:text-blue-400 transition-colors">Publicaciones</a>
                     <a href="cv.html" class="glow-link hover:text-blue-400 transition-colors">CV</a>
-                    <a href="about.html" class="hover:text-blue-400 transition-colors">Sobre mí</a>
                 </div>
             </div>
         </div>
@@ -95,17 +99,30 @@
         <div class="max-w-6xl mx-auto px-4">
             <h1 class="text-4xl font-bold mb-12 text-center gradient-text">Curriculum Vitae</h1>
             
+            <!-- Personal Information -->
+            <div class="card rounded-xl p-6 mb-8 reveal">
+                <h2 class="text-2xl font-bold mb-4">Sobre Mí</h2>
+                <p class="text-gray-400 mb-4">
+                    Me fascina el potencial de la minería de datos educativos (EDM) para transformar el proceso de aprendizaje universitario. Como investigador y doctorando, me apasiona utilizar mis habilidades para contribuir a descubrimientos que marquen una diferencia real en la educación superior.
+                </p>
+                <p class="text-gray-400 mb-4">
+                    Mi formación en Ingeniería Industrial, combinada con mi interés en la optimización y el análisis de datos, me permite tender un puente entre el mundo educativo y el poder de la computación. He tenido la oportunidad de trabajar en proyectos realmente interesantes, desde la predicción del abandono universitario hasta el desarrollo de soluciones basadas en datos para mejorar el rendimiento académico.
+                </p>
+                <p class="text-gray-400 mb-4">
+                    Siempre estoy abierto a colaborar con otros profesionales que compartan mi pasión por expandir los límites de la ingeniería mediante la aplicación del análisis de datos en el ámbito educativo.
+                </p>
+            </div>
+            
             <!-- Contact Information -->
             <div class="card rounded-xl p-6 mb-8 reveal">
                 <h2 class="text-2xl font-bold mb-4">Información de Contacto</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <p class="text-gray-400">Email: <a href="mailto:arigsae@etsii.upv.es" class="text-blue-400">arigsae@etsii.upv.es</a></p>
-                        <p class="text-gray-400">Teléfono: +34 XXX XXX XXX</p>
                     </div>
                     <div>
                         <p class="text-gray-400">Ubicación: Valencia, España</p>
-                        <p class="text-gray-400">LinkedIn: <a href="https://www.linkedin.com/in/arigsae" class="text-blue-400">Arigsa</a></p>
+                        <p class="text-gray-400">LinkedIn: <a href="https://www.linkedin.com/in/arigsae" class="text-blue-400">Arnau Igualde Sáez</a></p>
                     </div>
                 </div>
             </div>
@@ -149,8 +166,6 @@
                         <p class="text-gray-400">Lliria, España | 2021 - 2022</p>
                         <p class="text-gray-400">Desarrollo e implementación de proyectos de automatización industrial. Diseño de soluciones para optimización de procesos productivos.</p>
                     </div>
-
-                    
                 </div>
             </div>
 
@@ -173,16 +188,17 @@
                     <div class="text-gray-400">Español: Nativo</div>
                     <div class="text-gray-400">Valencià: Grau Mitjà (C1)</div>
                     <div class="text-gray-400">Inglés: Nivel Medio-Alto (B2)</div>
-                    <div class="text-gray-400">Francés: Nivel Básico </div>                </div>
+                    <div class="text-gray-400">Francés: Nivel Básico</div>
+                </div>
             </div>
 
             <!-- Certifications -->
             <div class="card rounded-xl p-6 mb-8 reveal">
                 <h2 class="text-2xl font-bold mb-4">Certificaciones y Cursos</h2>
                 
-                <h3 class="text-xl font-semibold mb-2">IA y Ciencia de Datos</h3>
+                <h3 class="text-xl font-semibold mb-2">Ciencia de Datos y EDM</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    <div class="text-gray-400">Inteligencia Artificial para Ingeniería</div>
+                    <div class="text-gray-400">Educational Data Mining</div>
                     <div class="text-gray-400">Deep Learning y sus aplicaciones</div>
                     <div class="text-gray-400">Python para Ciencia de Datos</div>
                     <div class="text-gray-400">Optimización de Procesos con IA</div>
@@ -210,16 +226,22 @@
                 
                 <div class="space-y-4">
                     <div>
-                        <h3 class="text-xl font-semibold">Optimización de Procesos Industriales mediante Técnicas de IA</h3>
-                        <p class="text-gray-400">Revista de Ingeniería Industrial, 2023</p>
+                        <h3 class="text-xl font-semibold">Educational data mining para la predicción del abandono universitario en ingeniería</h3>
+                        <p class="text-gray-400">Results in Engineering, Volume 22, 2025, 102288</p>
+                        <p class="text-gray-400">
+                            <a href="https://www.sciencedirect.com/science/article/pii/S2590123025004475" target="_blank" class="text-blue-400">
+                                Ver publicación
+                            </a>
+                        </p>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold">Análisis Predictivo para la Mejora de la Eficiencia Energética</h3>
-                        <p class="text-gray-400">Congreso Internacional de Ingeniería, 2022</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold">Implementación de Sistemas de Monitorización en Tiempo Real para Entornos Productivos</h3>
-                        <p class="text-gray-400">Journal of Industrial Engineering, 2021</p>
+                        <h3 class="text-xl font-semibold">On the Mathematics Assessment Methods at a Spanish University</h3>
+                        <p class="text-gray-400">Mathematics Education Research. CSEDU 2023</p>
+                        <p class="text-gray-400">
+                            <a href="https://link.springer.com/chapter/10.1007/978-3-031-82334-3_116" target="_blank" class="text-blue-400">
+                                Ver publicación
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -248,7 +270,7 @@
                 </a>
             </div>
             <p class="text-gray-400 text-left">Email: <a href="mailto:arigsae@etsii.upv.es" class="hover:text-blue-400">arigsae@etsii.upv.es</a></p>
-            <p class="text-gray-500 mt-4 text-left">© <span id="current-year"></span> Arigsa. Todos los derechos reservados.</p>
+            <p class="text-gray-500 mt-4 text-left">© <span id="current-year"></span> Arnau Igualde Sáez. Todos los derechos reservados.</p>
         </div>
     </footer>
 
